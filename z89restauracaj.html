@@ -1,0 +1,486 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="style.css">
+
+<script type="text/javascript">
+
+function sprawdz1(){
+    if(document.getElementById('zupa1').checked){  
+        zupa1pokaz.innerHTML = ("Pomidorowa z ogórkami");  
+    }
+    else{
+        zupa1pokaz.innerHTML = " ";
+    }
+}
+
+function sprawdz2(){
+    if(document.getElementById('zupa2').checked){
+        zupa2pokaz.innerHTML = ("Rosół z indyka");    
+    }
+    else{
+        zupa2pokaz.innerHTML = (" ")
+    }
+}
+
+function sprawdz3(){
+    if(document.getElementById('zupa3').checked){
+        zupa3pokaz.innerHTML = ("Ogórkowa z pomidorów");   
+    }
+    else{
+        zupa3pokaz.innerHTML = (" ")
+    }
+}
+
+function sprawdz4(){
+    if(document.getElementById('drugie1').checked){
+        danie1pokaz.innerHTML = ("Lasagne z mielonymi");
+    }
+    else{
+        danie1pokaz.innerHTML = (" ")
+    }
+}
+
+function sprawdz5(){
+    if(document.getElementById('drugie2').checked){
+        danie2pokaz.innerHTML = ("Schabowy z batatami");
+    }
+    else{
+        danie2pokaz.innerHTML = (" ")
+    }
+}
+
+function sprawdz6(){
+    if(document.getElementById('drugie3').checked){
+        danie3pokaz.innerHTML = ("Pizza hawajska");
+    }
+    else{
+        danie3pokaz.innerHTML = (" ")
+    }
+}
+
+function sprawdz7(){
+    if(document.getElementById('deser1').checked){
+        deser1pokaz.innerHTML = ("Sernik z kury");
+    }
+    else{
+        deser1pokaz.innerHTML = (" ")
+    }
+}
+function sprawdz8(){
+    if(document.getElementById('deser2').checked){
+        deser2pokaz.innerHTML = ("Mrowisko z mrówkami");
+    }
+    else{
+        deser2pokaz.innerHTML = (" ")
+    }
+}
+function sprawdz9(){
+    if(document.getElementById('deser3').checked){
+        deser3pokaz.innerHTML = ("Brownie z białej czekolady");
+    }
+    else{
+        deser3pokaz.innerHTML = (" ")
+    }
+}
+function sprawdz10(){
+    if(document.getElementById('piciu1').checked){
+        piciu1pokaz.innerHTML = ("Romper");
+    }
+    else{
+        piciu1pokaz.innerHTML = (" ")
+    }
+}
+
+function sprawdz11(){
+    if(document.getElementById('piciu2').checked){
+        piciu2pokaz.innerHTML = ("Ocet");
+    }
+    else{
+        piciu2pokaz.innerHTML = (" ")
+    }
+}
+
+function sprawdz12(){
+    if(document.getElementById('piciu3').checked){
+        piciu3pokaz.innerHTML = ("Zmielone sushi");    
+    }
+    else{
+        piciu3pokaz.innerHTML = (" ")
+    }
+}
+
+var cena50z = 0;
+var cenabezz = 0;
+
+var cena50dan = 0;
+var cenabezdan = 0;
+
+var cena50des = 0;
+var cenabezdes = 0;
+
+var cena50p = 0;
+var cenabezp = 0;
+
+function potwierdz(){
+
+    /*var imie = document.getElementById('imie').innerHTML;
+    alert(imie);*/
+
+    /*let wejscie = document.getElementById("imie").value;
+    document.getElementById("imiepokaz").innerHTML = wejscie;*/
+
+    const przycisk = document.getElementById('potw');
+    przycisk.disabled = true;
+
+    const wylacz = () => {
+        przycisk.disabled = false;
+    }
+
+    przycisk.addEventListener('click', wylacz);
+
+    if (document.getElementById('zupa1').checked && document.getElementById('zupa2').checked && document.getElementById('zupa3').checked) {
+        document.getElementById("pokaz1").innerHTML = ("CENA ZA ZUPY: ");
+
+        cena50z = cena50z + (15 + 10 + 14)/2;
+        document.getElementById('cena1').innerHTML = "Cena zamówienia: "+ cena50z + " zł"+"<br>"+" -50% za 3 zamówienia z tej samej kategorii";
+    }
+    else if (document.getElementById('zupa1').checked && document.getElementById('zupa2').checked) {
+        document.getElementById("pokaz1").innerHTML = ("CENA ZA ZUPY: ");
+
+        cenabezz = cenabezz + 15 + 10;
+        document.getElementById('cena1').innerHTML = "Cena zamówienia: "+ cenabezz + " zł"+"<br>"+" nie ma zniżki";
+    }
+    else if (document.getElementById('zupa1').checked && document.getElementById('zupa3').checked){
+        document.getElementById("pokaz1").innerHTML = ("CENA ZA ZUPY: ");
+
+        cenabezz = cenabezz + 15 + 14;
+        document.getElementById('cena1').innerHTML = "Cena zamówienia: "+ cenabezz + " zł"+"<br>"+" nie ma zniżki";
+    }
+    else if (document.getElementById('zupa2').checked && document.getElementById('zupa3').checked){
+        document.getElementById("pokaz1").innerHTML = ("CENA ZA ZUPY: ");
+
+        cenabezz = cenabezz + 10 + 14;
+        document.getElementById('cena1').innerHTML = "Cena zamówienia: "+ cenabezz + " zł"+"<br>"+" nie ma zniżki";
+    }
+   
+
+
+    if (document.getElementById('drugie1').checked && document.getElementById('drugie2').checked && document.getElementById('drugie3').checked) {
+        document.getElementById("pokaz2").innerHTML = ("CENA ZA 2 DANIE: ");
+
+        cena50dan = cena50dan + (20 + 17 + 13)/2;
+        document.getElementById('cena2').innerHTML = "Cena zamówienia: "+ cena50dan + " zł"+"<br>"+" -50% za 3 zamówienia z tej samej kategorii";
+    }
+    else if (document.getElementById('drugie1').checked && document.getElementById('drugie2').checked) {
+        document.getElementById("pokaz2").innerHTML = ("CENA ZA 2 DANIE: ");
+
+        cenabezdan = cenabezdan + 20 + 17;
+        document.getElementById('cena2').innerHTML = "Cena zamówienia: "+ cenabezdan + " zł"+"<br>"+" nie ma zniżki";
+    }
+    else if (document.getElementById('drugie1').checked && document.getElementById('drugie3').checked){
+        document.getElementById("pokaz2").innerHTML = ("CENA ZA 2 DANIE: ");
+        
+        cenabezdan = cenabezdan + 20 + 13;
+        document.getElementById('cena2').innerHTML = "Cena zamówienia: "+ cenabezdan + " zł"+"<br>"+" nie ma zniżki";
+    }
+    else if (document.getElementById('drugie2').checked && document.getElementById('drugie3').checked){
+        document.getElementById("pokaz2").innerHTML = ("CENA ZA 2 DANIE: ");
+
+        cenabezdan = cenabezdan + 17 + 13;
+        document.getElementById('cena2').innerHTML = "Cena zamówienia: "+ cenabezdan + " zł"+"<br>"+" nie ma zniżki";
+    }
+
+    
+
+    if (document.getElementById('deser1').checked && document.getElementById('deser2').checked && document.getElementById('deser3').checked) {
+        document.getElementById("pokaz3").innerHTML = ("CENA ZA DESER: ");
+
+        cena50des = cena50des + (16 + 14 + 15)/2;
+        document.getElementById('cena3').innerHTML = "Cena zamówienia: "+ cena50des + " zł"+"<br>"+" -50% za 3 zamówienia z tej samej kategorii";
+    }
+    else if (document.getElementById('deser1').checked && document.getElementById('deser2').checked) {
+        document.getElementById("pokaz3").innerHTML = ("CENA ZA DESER: ");
+
+        cenabezdes = cenabezdes + 16 + 14;
+        document.getElementById('cena3').innerHTML = "Cena zamówienia: "+ cenabezdes + " zł"+"<br>"+" nie ma zniżki";
+    }
+    else if (document.getElementById('deser1').checked && document.getElementById('deser3').checked){
+        document.getElementById("pokaz3").innerHTML = ("CENA ZA DESER: ");
+
+        cenabezdes = cenabezdes + 16 + 15;
+        document.getElementById('cena3').innerHTML = "Cena zamówienia: "+ cenabezdes + " zł"+"<br>"+" nie ma zniżki";
+    }
+    else if (document.getElementById('deser2').checked && document.getElementById('deser3').checked){
+        document.getElementById("pokaz3").innerHTML = ("CENA ZA DESER: ");
+
+        cenabezdes = cenabezdes + 14 + 15;
+        document.getElementById('cena3').innerHTML = "Cena zamówienia: "+ cenabezdes + " zł"+"<br>"+" nie ma zniżki";
+    }
+
+    
+
+    if (document.getElementById('piciu1').checked && document.getElementById('piciu2').checked && document.getElementById('piciu3').checked) {
+        document.getElementById("pokaz4").innerHTML = ("CENA ZA PICIU: ");
+
+        cena50p = cena50p + (20 + 10 + 30)/2;
+        document.getElementById('cena4').innerHTML = "Cena zamówienia: "+ cena50p + " zł"+"<br>"+" -50% za 3 zamówienia z tej samej kategorii";
+    }
+    else if (document.getElementById('piciu1').checked && document.getElementById('piciu2').checked) {
+        document.getElementById("pokaz4").innerHTML = ("CENA ZA PICIU: ");
+
+        cenabezp = cenabezp + 20 + 10;
+        document.getElementById('cena4').innerHTML = "Cena zamówienia: "+ cenabezp + " zł"+"<br>"+" nie ma zniżki";
+    }
+    else if (document.getElementById('piciu1').checked && document.getElementById('piciu3').checked){
+        document.getElementById("pokaz4").innerHTML = ("CENA ZA PICIU: ");
+
+        cenabezp = cenabezp + 20 + 30;
+        document.getElementById('cena4').innerHTML = "Cena zamówienia: "+ cenabezp + " zł"+"<br>"+" nie ma zniżki";
+    }
+    else if (document.getElementById('piciu2').checked && document.getElementById('piciu3').checked){
+        document.getElementById("pokaz4").innerHTML = ("CENA ZA PICIU: ");
+
+        cenabezp = cenabezp + 10 + 30;
+        document.getElementById('cena4').innerHTML = "Cena zamówienia: "+ cenabezp + " zł"+"<br>"+" nie ma zniżki";
+    }
+
+
+}
+
+
+   
+
+
+
+/*function obliczanie(dane)
+{
+wynik.innerHTML=" ";
+cena_koncowa=0;
+if ( dane.wybor[0].checked)
+93
+{
+cena_koncowa=parseFloat(dane.cena.value);
+}
+if ( dane.wybor[1].checked)
+{
+cena_koncowa=0.9*parseFloat(dane.cena.value);
+}
+if ( dane.wybor[2].checked)
+{
+cena_koncowa=0.8*parseFloat(dane.cena.value);
+}
+if (dane.vat.selectedIndex==0)
+{
+cena_koncowa=cena_koncowa;
+}
+if (dane.vat.selectedIndex==1)
+{
+cena_koncowa=1.07*cena_koncowa;
+}
+if (dane.vat.selectedIndex==2)
+{
+cena_koncowa=1.23*cena_koncowa;
+}
+if(dane.ubezpieczenie.checked == true)
+{
+cena_koncowa=1.15*cena_koncowa;
+}
+if(dane.gwarancja.checked == true)
+{
+cena_koncowa=1.28*cena_koncowa;
+}
+wynik.innerHTML="do zapłaty "+cena_koncowa.toFixed(2)+" zł";
+}*/
+</script>
+
+</head>
+<body>
+
+<b id="menu"> MENU: </b> <br>
+
+<br>
+
+<div class="specjal">
+
+<div id="t1" class="rozmiar">
+<b id="k">Wybór zupy: </b><br><br>
+<input type="checkbox" name="wybor" value="15" id="zupa1" onclick="sprawdz1()"/> <a id="k"> <b> Pomidorowa z ogórkami </b> </a> <br><br>
+<input type="checkbox" name="wybor" value="10" id="zupa2" onclick="sprawdz2()"/> <a id="k"> <b> Rosół z indyka </b> </a> <br><br>
+<input type="checkbox" name="wybor" value="14" id="zupa3" onclick="sprawdz3()"/> <a id="k"> <b> Ogórkowa z pomidorów </b> </a> <br><br><br>
+</div>
+
+<div id="t2" class="rozmiar">
+<b id="k">Wybór drugie danie: </b><br><br>
+<input type="checkbox" name="wybor" value="20" id="drugie1" onclick="sprawdz4()"/> <a id="k"> <b> Lasagne z mielonymi </b> </a> <br><br>
+<input type="checkbox" name="wybor" value="17" id="drugie2" onclick="sprawdz5()"/> <a id="k"> <b> Schabowy z batatami </b> </a> <br><br>
+<input type="checkbox" name="wybor" value="13" id="drugie3" onclick="sprawdz6()"/> <a id="k"> <b> Pizza hawajska </b> </a> <br><br><br>
+</div>
+
+<div id="t3" class="rozmiar">
+<b id="k">Wybór deseru: </b><br><br>
+<input type="checkbox" name="wybor" value="16" id="deser1" onclick="sprawdz7()"/> <a id="k"> <b> Sernik z kury </b> </a> <br><br>
+<input type="checkbox" name="wybor" value="14" id="deser2" onclick="sprawdz8()"/> <a id="k"> <b> Mrowisko z mrówkami </b> </a> <br><br>
+<input type="checkbox" name="wybor" value="15" id="deser3" onclick="sprawdz9()"/> <a id="k"> <b> Brownie z białej czekolady </b> </a> <br><br><br>
+</div>
+
+<div id="t4" class="rozmiar">
+<b id="k">Wybór piciu: </b><br><br>
+<input type="checkbox" name="wybor" value="20" id="piciu1" onclick="sprawdz10()"/> <a id="k"> <b> Romper </b> </a> <br><br>
+<input type="checkbox" name="wybor" value="10" id="piciu2" onclick="sprawdz11()"/> <a id="k"> <b> Ocet </b> </a> <br><br>
+<input type="checkbox" name="wybor" value="30" id="piciu3" onclick="sprawdz12()"/> <a id="k"> <b> Zmielone sushi </b> </a> <br><br><br>
+</div>
+
+</div>
+
+<b id="text-potw"> POTWIERDZENIE: </b> <br>
+
+<div class="div-form-potw">
+
+<form name="zaplata">
+
+    <br>
+    <div id="formularz1">
+
+        <label for="imie" class="form-potw"> Podaj imie: </label> <br>
+        <input type="text" id="imie" value="" class="tekst " name="imie" placeholder="imie..." required>
+
+    </div>
+    <br>
+    <div id="formularz1">
+
+        <label for="nazwisko" class="form-potw"> Podaj nazwisko: </label> <br>
+        <input type="text" id="nazwisko" class="tekst " name="nazwisko" placeholder="nazwisko..." required>
+
+    </div>
+    <br>
+    <div id="formularz1">
+
+        <label for="email" class="form-potw"> Podaj adres email: </label> <br>
+        <input type="email" id="email" class="tekst " name="email" placeholder="email..." required>
+
+    </div>
+    <br>
+    <div id="formularz1">
+
+        <label for="telefon" class="form-potw"> Podaj numer telefonu: </label> <br>
+        <input type="tel" id="telefon" class="tekst " name="telefon" pattern="[0-9]{3} [0-9]{3} [0-9]{3}" placeholder="telefon oddzielony '-'..." required>
+
+    </div>
+    <br>
+    <div class="adres">
+        <div id="formularz1">
+
+            <label for="miasto" class="form-potw"> Podaj miasto: </label> <br>
+            <input type="text" id="miasto" class="tekst " name="miasto" placeholder="miasto..." required>
+
+        </div>
+        <br>
+        <div id="formularz1">
+
+            <label for="ulica" class="form-potw"> Podaj ulice: </label> <br>
+            <input type="text" id="ulica" class="tekst " name="ulica" placeholder="ulica..." required>
+
+        </div>
+        <br>
+        <div id="formularz1">
+
+            <label for="typ" class="form-potw"> Rodzaj budynku: </label>
+
+            <br>
+
+            <label for="mieszkanie" class="form-potw"> Mieszkanie </label>
+            <input type="radio" id="mieszkanie" class="tekst " name="typ" value="mieszkanie" required>
+
+            <label for="dom" class="form-potw"> Dom </label>
+            <input type="radio" id="dom" class="tekst " name="typ" value="dom" required>
+
+        </div>
+        <br>
+        <div id="formularz1">
+
+            <input id="potw" class="btn-potw" type="button" value="Potwierdz" onclick="potwierdz()" enabled> 
+
+        </div>
+    </div>
+</form>
+
+</div>
+
+<div class="div-form-fina">
+
+    <!--<form name="finalizacja">
+
+        <br>
+        <div id="formularz2">
+
+            <label for="zamowienie"> Twoje zamowienie: </label>
+
+            <br>
+                <div class="fin">
+
+                    <input type="text" id="zamowienie" name="zamowienie">
+
+                </div>
+
+        </div>
+
+    </form> -->
+
+
+
+        <h4 class="form-potw" style="font-size: 20px"> O to twoje zamówienie: <br> TYLKO DLA DWOJGA!</h4>
+        
+        <p id="zupa1pokaz"> </p>
+        <p id="zupa2pokaz"> </p>
+        <p id="zupa3pokaz"> </p>
+        <p id="danie1pokaz"> </p>
+        <p id="danie2pokaz"> </p>
+        <p id="danie3pokaz"> </p>
+        <p id="deser1pokaz"> </p>
+        <p id="deser2pokaz"> </p>
+        <p id="deser3pokaz"> </p>
+        <p id="piciu1pokaz"> </p>
+        <p id="piciu2pokaz"> </p>
+        <p id="piciu3pokaz"> </p>
+        <p id="imiepokaz"> </p>
+
+</div>
+
+<div class="div-form-platnosc">
+
+    <h4 class="form-potw" style="font-size: 20px"> Należność: <br> DZIELIMY Z POŁÓWKĄ NA PÓŁ! </h4>
+
+    <p id="pokaz1">  </p>
+    <p id="cena1">  </p>
+    
+    <p id="pokaz2">  </p>
+    <p id="cena2">  </p>
+
+    <p id="pokaz3">  </p>
+    <p id="cena3">  </p>
+
+    <p id="pokaz4">  </p>
+    <p id="cena4">  </p>
+
+</div>
+
+<!--<b id="k">Podaj VAT:</b><br>
+wybierz VAT<select name="vat">
+<option value="0"> 0%
+<option value="7"> 7%
+<option value="23"> 23%
+</select><br><br>
+<b id="k">Podaj opcje dodatkowe:</b><br>
+ubezpieczenie zakup &nbsp&nbsp&nbsp15%<input type="checkbox" name="ubezpieczenie" value=0 /><br>
+94
+przedłużona gwarancja 28%<input type="checkbox" name="gwarancja" value=0 /><br><br>
+
+<input type="button" value="Oblicz....." onClick="obliczanie(this.form)"/><br><br>
+</form>
+<table>
+<tr id="wynik"></tr>
+</table>
+-->
+</body>
+</html>

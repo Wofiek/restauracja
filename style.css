@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+:root{ /* ZMIENNE */
+    --ciemnysz: rgb(56, 56, 56);
+    --kcolor: rgb(28, 28, 28);
+}
+
+body{ /* BACKGROUND */
+    background-image: url("images.JPG");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 1250px;
+}
+
+h4{ 
+    text-align: center;
+    color: white;
+}
+
+p{
+    color: white;
+}
+
+/* MENU */
+
+#menu{                              
+    font-family: 'Pangolin', bold;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    font-size: 120px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+/* DIV WYBOR DAN*/
+
+.specjal{
+    /*border: 1px solid;*/
+    /*background-color: white;*/ 
+    
+    height: auto;
+    width: 1060px;
+    
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    bottom: 80%;
+    transform: translate(-50%, -50%);
+}
+
+
+.rozmiar{ /* WIELKOSC OKIENEK + PERSON. */
+    width: 220px;
+    height: auto;    
+    background-image: url("talerz.JPG");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 225px 175px;
+}
+
+
+#k{ /* TEKST DAN */
+    color: rgb(88, 40, 0);
+    text-shadow: 7px 7px 5px rgb(0, 0, 0);
+    font-family: 'Lora';
+    font-style: bold;
+    font-size: 15px;
+    /*background: linear-gradient( to right, grey, var(--ciemnysz));*/
+    /*color: var(--kcolor);*/
+    padding: 1px;
+}
+
+
+#t1{ /* PIERWSZE OKIENKO WYBORU */
+    position: absolute;
+
+    border-radius: 5% 20% 35% 5%;
+    box-shadow: 7px 20px rgba(0,0,0,.50);
+}
+
+
+#t2{ /* DRUGIE OKIENKO WYBORU */
+    border-radius: 5% 5% 35% 35%;
+    box-shadow: 7px 20px rgba(0,0,0,.50);
+
+    position: absolute;
+    top: 0px;
+    left: 280px;
+}
+
+
+#t3{ /* TRZECIE OKIENKO WYBORU */
+    border-radius: 5% 5% 35% 35%;
+    box-shadow: 7px 20px rgba(0,0,0,.50);
+
+    position: absolute;
+    top: 0px;
+    left: 550px;
+}
+
+
+#t4{ /* CZWARTE OKIENKO WYBORU */
+    border-radius: 5% 5% 20% 35%;
+    box-shadow: 7px 20px rgba(0,0,0,.50);
+    
+    position: absolute;
+    top: 0px;
+    left: 820px;
+}
+
+
+
+/* NAPIS POTWIERDZENIE */
+
+#text-potw{
+    font-family: 'Pangolin', bold;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    font-size: 80px;
+    
+    position: absolute;
+    left: 25%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+/* DIV PIERWSZY FORMULARZ */
+
+.div-form-potw{
+    border: 2px solid;
+    border-color: white;
+    border-radius: 5% 5% 25% 25%;
+    box-shadow: 7px 20px rgba(0,0,0,.50);
+    width: 350px;
+    height: 500px;
+    position: absolute;
+    background-color: rgba(90, 90, 90, 0.65);
+
+    right: 25%;
+    left: 25%;
+    bottom: -45%;
+    transform: translate(-50%, -50%);
+}
+
+
+#formularz1{ /* ULOZENIE TEKSTU CHILD */
+    text-align: center;
+}
+
+
+
+/* DIV DRUGI FORMULARZ */
+
+.div-form-fina{
+    border: 2px solid;
+    border-color: white;
+    border-radius: 5% 5% 25% 25%;
+    box-shadow: 7px 20px rgba(0,0,0,.50);
+    width: 350px;
+    height: 500px;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(90, 90, 90, 0.65);
+
+    right: 75%;
+    left: 75%;
+    bottom: -45%;
+    transform: translate(-50%, -50%);
+}
+
+.div-form-platnosc{
+    border: 2px solid;
+    border-color: white;
+    border-radius: 5% 5% 25% 25%;
+    box-shadow: 7px 20px rgba(0,0,0,.50);
+    width: 350px;
+    height: 500px;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(90, 90, 90, 0.65);
+
+    right: 50%;
+    left: 50%;
+    bottom: -45%;
+    transform: translate(-50%, -50%);
+}
+
+#formularz2{ /* ^ DIV CHILD ^ */
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+.fin{ /* ^ DIV CHILD ^ */
+    bottom: 0px;
+    border: 2px solid;
+    border-color: white;
+    
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+
+
+/* PRZYCISK STYL */
+
+.btn-potw{
+    border: none;
+    font-family: 'Lora';
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    background: rgba(84, 84, 84, 10);
+    color: #fff;
+}
+
+.btn-potw:hover{ /* ^ PRZYCISK STYL ^ */
+    background: var(--ciemnysz);
+}
+
+
+
+.tekst{
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 5px;
+    background: #c5c5c5;
+    color:rgb(56, 56, 56);
+}
+
+
+.form-potw{
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Fira Sans';
+    font-size: 15px;
+}
+
+/*#potw2{
+    font-family: 'Lora', bold;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    font-size: 15px;
+}*/
+
+/*#a{
+    background: linear-gradient( to right, grey, var(--ciemnysz));
+    color: white;
+    font-size: 20px;
+}*/
+
+
+
+
+
+
+
